@@ -9,6 +9,7 @@ import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-hero',
+  standalone: true,
   templateUrl: './hero.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgOptimizedImage, RouterLink]

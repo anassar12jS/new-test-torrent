@@ -9,6 +9,7 @@ import { Movie } from '../../models/tmdb.model';
 
 @Component({
   selector: 'app-search',
+  standalone: true,
   templateUrl: './search.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MovieCardComponent]

@@ -1,3 +1,4 @@
+
 import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { toSignal, toObservable } from '@angular/core/rxjs-interop';
 import { TmdbService } from '../../services/tmdb.service';
@@ -7,6 +8,7 @@ import { Movie } from '../../models/tmdb.model';
 
 @Component({
   selector: 'app-genres',
+  standalone: true,
   templateUrl: './genres.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MovieCardComponent]

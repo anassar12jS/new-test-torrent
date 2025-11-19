@@ -1,3 +1,4 @@
+
 import { Component, ChangeDetectionStrategy, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -9,6 +10,7 @@ import { TvShowDetails } from '../../models/tmdb.model';
 
 @Component({
   selector: 'app-watch',
+  standalone: true,
   templateUrl: './watch.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SafeUrlPipe]

@@ -7,6 +7,7 @@ import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-movies',
+  standalone: true,
   templateUrl: './movies.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MovieCardComponent]

@@ -7,6 +7,7 @@ import { TmdbService } from '../../services/tmdb.service';
 
 @Component({
   selector: 'app-movie-card',
+  standalone: true,
   templateUrl: './movie-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgOptimizedImage, RouterLink]
