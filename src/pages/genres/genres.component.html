@@ -1,0 +1,24 @@
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h1 class="text-4xl font-bold mb-8 text-red-500">Browse by Genre</h1>
+  <div class="flex flex-wrap gap-4 mb-8">
+    @for (genre of genres; track genre.id) {
+      <button (click)="selectGenre(genre)" 
+              [class]="'px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ' + (selectedGenreId() === genre.id ? 'bg-red-600 text-white shadow-lg shadow-red-600/30' : 'bg-zinc-800 hover:bg-zinc-700 text-zinc-300')">
+        <i [class]="'fas ' + genre.icon"></i>
+        <span>{{ genre.name }}</span>
+      </button>
+    }
+  </div>
+
+  <h2 class="text-3xl font-bold mb-6 text-white">{{ selectedGenreName() }} Movies</h2>
+  @if (moviesByGenre().results.length > 0) {
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+      @for (movie of moviesByGenre().results; track movie.id) {
+        <app-movie-card [item]="movie" />
+      }
+    </div>
+  } @else {
+    <p class="text-zinc-400">Could not load movies for this genre.</p>
+  }
+</div>

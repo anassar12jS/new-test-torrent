@@ -1,0 +1,13 @@
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h1 class="text-4xl font-bold mb-8 text-red-500">Popular TV Shows</h1>
+  @if (tvShows().results.length > 0) {
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+      @for (show of tvShows().results; track show.id) {
+        <app-movie-card [item]="show" />
+      }
+    </div>
+  } @else {
+    <p class="text-zinc-400">Could not load TV shows.</p>
+  }
+</div>

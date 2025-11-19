@@ -1,0 +1,16 @@
+
+@if (item()) {
+  <a [routerLink]="['/watch', itemType, item().id]" class="group block bg-zinc-900 rounded-lg overflow-hidden shadow-lg hover:shadow-red-600/30 transition-all duration-300 transform hover:-translate-y-2">
+    <div class="relative">
+      <img [ngSrc]="posterUrl" [alt]="item().title || item().name" width="500" height="750" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-110" priority="false">
+      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+        <i class="fas fa-play text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+      </div>
+    </div>
+    <div class="p-4">
+      <h3 class="text-white font-bold truncate" [title]="item().title || item().name">
+        {{ item().title || item().name }}
+      </h3>
+    </div>
+  </a>
+}

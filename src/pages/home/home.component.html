@@ -1,0 +1,28 @@
+
+<app-hero></app-hero>
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6 text-red-500">Trending Now</h2>
+    @if (trending().results.length > 0) {
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+        @for (item of trending().results; track item.id) {
+          <app-movie-card [item]="item" />
+        }
+      </div>
+    } @else {
+      <p class="text-zinc-400">Could not load trending content.</p>
+    }
+  </section>
+  <section>
+    <h2 class="text-3xl font-bold mb-6 text-red-500">New Releases</h2>
+    @if (upcoming().results.length > 0) {
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+        @for (item of upcoming().results; track item.id) {
+          <app-movie-card [item]="item" />
+        }
+      </div>
+    } @else {
+      <p class="text-zinc-400">Could not load new releases.</p>
+    }
+  </section>
+</div>
