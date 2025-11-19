@@ -1,4 +1,3 @@
-
 export interface Movie {
   id: number;
   title: string;
@@ -20,6 +19,9 @@ export interface MovieDetails extends Movie {
   genres: { id: number; name: string }[];
   runtime: number;
   release_date: string;
+  external_ids?: {
+    imdb_id: string;
+  }
 }
 
 export interface TvShowDetails extends Movie {
@@ -32,6 +34,9 @@ export interface TvShowDetails extends Movie {
   }[];
   number_of_seasons: number;
   first_air_date: string;
+  external_ids?: {
+    imdb_id: string;
+  }
 }
 
 export interface TvSeasonDetails {
